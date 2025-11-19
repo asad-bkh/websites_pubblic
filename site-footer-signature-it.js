@@ -1,25 +1,43 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Cerca il footer; se non c'è, crea uno
+    // Cerca il footer; se non c'è, crealo
     var footer = document.querySelector("footer");
     if (!footer) {
         footer = document.createElement("footer");
         document.body.appendChild(footer);
     }
 
-    // Crea il div della firma
-    var div = document.createElement("div");
-    div.style.textAlign = "center";
-    div.style.fontSize = "54px";
-    div.style.padding = "8px 0";
-    div.style.fontFamily = "Arial, sans-serif";
-    div.style.color = "#555";
-    div.style.borderTop = "1px solid #ddd";
-    div.style.marginTop = "20px";
+    // Crea il contenitore del badge
+    var badge = document.createElement("div");
+    badge.style.textAlign = "center";
+    badge.style.marginTop = "20px";
 
-    // Contenuto della firma
-    div.innerHTML = 'Sito realizzato da <a href="https://digital1.it" target="_blank" style="color:#0000000; text-decoration:none; font-weight:bold;">Digital1</a>';
+    // Crea il “tasto”
+    var button = document.createElement("a");
+    button.href = "https://digital1.it";
+    button.target = "_blank";
+    button.textContent = "Sito realizzato da Digital1";
+    button.style.display = "inline-block";
+    button.style.padding = "8px 16px";
+    button.style.backgroundColor = "#0073e6";
+    button.style.color = "#fff";
+    button.style.borderRadius = "20px";
+    button.style.textDecoration = "none";
+    button.style.fontFamily = "Arial, sans-serif";
+    button.style.fontSize = "14px";
+    button.style.fontWeight = "bold";
+    button.style.transition = "background-color 0.3s, transform 0.2s";
+    button.style.cursor = "pointer";
 
-    footer.appendChild(div);
+    // Effetto hover
+    button.addEventListener("mouseover", function() {
+        button.style.backgroundColor = "#005bb5";
+        button.style.transform = "scale(1.05)";
+    });
+    button.addEventListener("mouseout", function() {
+        button.style.backgroundColor = "#0073e6";
+        button.style.transform = "scale(1)";
+    });
+
+    badge.appendChild(button);
+    footer.appendChild(badge);
 });
-
-
