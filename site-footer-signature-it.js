@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Crea il div della firma
     var div = document.createElement("div");
     div.style.textAlign = "center";
-    div.style.fontSize = "14px";
+    div.style.fontSize = "54px";
     div.style.padding = "8px 0";
     div.style.fontFamily = "Arial, sans-serif";
     div.style.color = "#555";
@@ -21,3 +21,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     footer.appendChild(div);
 });
+
