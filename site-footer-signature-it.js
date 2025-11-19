@@ -1,6 +1,6 @@
 <div style="
     text-align: center;
-    font-size: 14px;
+    font-size: 20px;
     padding: 8px 0;
     font-family: 'Arial', sans-serif;
     color: #555;
@@ -16,3 +16,4 @@
     Digital1
   </a>
 </div>
+
