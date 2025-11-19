@@ -1,19 +1,23 @@
-<div style="
-    text-align: center;
-    font-size: 20px;
-    padding: 8px 0;
-    font-family: 'Arial', sans-serif;
-    color: #555;
-    border-top: 1px solid #ddd;
-    margin-top: 20px;
-">
-  Sito realizzato da 
-  <a href="https://digital1.it" target="_blank" style="
-      color: #0073e6;
-      text-decoration: none;
-      font-weight: bold;
-  ">
-    Digital1
-  </a>
-</div>
+document.addEventListener("DOMContentLoaded", function() {
+    // Cerca il footer; se non c'è, crea uno
+    var footer = document.querySelector("footer");
+    if (!footer) {
+        footer = document.createElement("footer");
+        document.body.appendChild(footer);
+    }
 
+    // Crea il div della firma
+    var div = document.createElement("div");
+    div.style.textAlign = "center";
+    div.style.fontSize = "14px";
+    div.style.padding = "8px 0";
+    div.style.fontFamily = "Arial, sans-serif";
+    div.style.color = "#555";
+    div.style.borderTop = "1px solid #ddd";
+    div.style.marginTop = "20px";
+
+    // Contenuto della firma
+    div.innerHTML = 'Sito realizzato da <a href="https://digital1.it" target="_blank" style="color:#0073e6; text-decoration:none; font-weight:bold;">Digital1</a>';
+
+    footer.appendChild(div);
+});
