@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var button = document.createElement("a");
     button.href = "https://digital1.it";
     button.target = "_blank";
-    button.textContent = "Sito realizzato da Digital1";
+    button.textContent = "Sito Web realizzato da Digital1";
     button.style.display = "inline-block";
     button.style.padding = "8px 16px";
     button.style.backgroundColor = "#0073e6";
@@ -41,3 +41,4 @@ document.addEventListener("DOMContentLoaded", function() {
     badge.appendChild(button);
     footer.appendChild(badge);
 });
+
