@@ -17,8 +17,9 @@ document.addEventListener("DOMContentLoaded", function() {
     div.style.marginTop = "20px";
 
     // Contenuto della firma
-    div.innerHTML = 'Sito realizzato da <a href="https://digital1.it" target="_blank" style="color:#0073e6; text-decoration:none; font-weight:bold;">Digital1</a>';
+    div.innerHTML = 'Sito realizzato da <a href="https://digital1.it" target="_blank" style="color:#0000000; text-decoration:none; font-weight:bold;">Digital1</a>';
 
     footer.appendChild(div);
 });
+
 
