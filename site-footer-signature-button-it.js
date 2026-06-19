@@ -1,64 +1,43 @@
-(function() {
-
-```
-function init() {
-
-    const container = document.getElementById("digital1-footer-signature");
-
-    if (!container) {
-        console.warn("Digital1 Signature: container not found");
-        return;
+document.addEventListener("DOMContentLoaded", function() {
+    // Cerca il footer; se non c'è, crealo
+    var footer = document.querySelector("footer");
+    if (!footer) {
+        footer = document.createElement("footer");
+        document.body.appendChild(footer);
     }
 
-    if (container.dataset.digital1Loaded) {
-        return;
-    }
+    // Crea il contenitore del badge
+    var badge = document.createElement("div");
+    badge.style.textAlign = "center";
+    badge.style.marginTop = "20px";
 
-    container.dataset.digital1Loaded = "true";
-    container.style.textAlign = "center";
+    // Crea il “tasto”
+    var button = document.createElement("a");
+    button.href = "https://digital1.it";
+    button.target = "_blank";
+    button.textContent = "Sito Web realizzato da Digital1";
+    button.style.display = "inline-block";
+    button.style.padding = "8px 16px";
+    button.style.backgroundColor = "#0073e6";
+    button.style.color = "#fff";
+    button.style.borderRadius = "20px";
+    button.style.textDecoration = "none";
+    button.style.fontFamily = "Arial, sans-serif";
+    button.style.fontSize = "14px";
+    button.style.fontWeight = "bold";
+    button.style.transition = "background-color 0.3s, transform 0.2s";
+    button.style.cursor = "pointer";
 
-    const link = document.createElement("a");
-
-    link.href = "https://digital1.it";
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-
-    link.innerHTML = `
-        <span style="opacity:.7">✦</span>
-        <span>Realizzato da Digital1</span>
-    `;
-
-    Object.assign(link.style, {
-        display: "inline-flex",
-        alignItems: "center",
-        gap: "8px",
-        padding: "10px 18px",
-        borderRadius: "999px",
-        textDecoration: "none",
-        fontSize: "13px",
-        fontWeight: "500",
-        fontFamily: "system-ui, sans-serif",
-        color: "inherit",
-        border: "1px solid rgba(255,255,255,.15)",
-        transition: "all .25s ease"
+    // Effetto hover
+    button.addEventListener("mouseover", function() {
+        button.style.backgroundColor = "#005bb5";
+        button.style.transform = "scale(1.05)";
+    });
+    button.addEventListener("mouseout", function() {
+        button.style.backgroundColor = "#0073e6";
+        button.style.transform = "scale(1)";
     });
 
-    link.addEventListener("mouseenter", function() {
-        link.style.transform = "translateY(-2px)";
-    });
-
-    link.addEventListener("mouseleave", function() {
-        link.style.transform = "translateY(0)";
-    });
-
-    container.appendChild(link);
-}
-
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-} else {
-    init();
-}
-```
-
-})();
+    badge.appendChild(button);
+    footer.appendChild(badge);
+});
